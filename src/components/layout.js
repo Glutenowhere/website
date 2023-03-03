@@ -73,7 +73,7 @@ const Layout = (props) => {
             </Link>
           ))}
           {socialMediaItems.map((item) => (
-            <a href={item.link} target="_blank" rel="noreferrer noopener">
+            <a className="navbar-item" href={item.link} target="_blank" rel="noreferrer noopener">
               <span className="icon is-large">
                 <i className={`fab ${item.iconName}`}></i>
               </span>
