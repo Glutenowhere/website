@@ -46,7 +46,7 @@ const Layout = (props) => {
     const navBarTop = (
       <nav className="navbar" role="navigation" ariaLabel="main navigation">
         <div className="navbar-brand">
-          <Link to="./">
+          <Link to="/">
             <b>Logo</b>
           </Link>
           <a
@@ -84,19 +84,18 @@ const Layout = (props) => {
     );
 
     return (
-      <section className="hero is-medium is-primary">
-        <div className="hero-head">
-            {navBarTop}
-        </div>
-        <div className="hero-body">
-          <p className="title is-size-1 has-text-centered">
-            Coeliac Disease and the Workplace
-          </p>
-        </div>
-        <div className="hero-footer">
-            {navBarBottom}
-        </div>
-      </section>
+      <>
+        <header className="hero is-medium is-primary">
+          <div className="hero-head">{navBarTop}</div>
+          <div className="hero-body">
+            <p className="title is-size-1 has-text-centered">
+              Coeliac Disease and the Workplace
+            </p>
+          </div>
+          <div className="hero-footer">{navBarBottom}</div>
+        </header>
+        <main>{props.children}</main>
+      </>
     );
 }
 
