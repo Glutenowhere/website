@@ -94,7 +94,7 @@ const Layout = (props) => {
           </div>
           <div className="hero-footer">{navBarBottom}</div>
         </header>
-        <main>{props.children}</main>
+        <main className="container">{props.children}</main>
       </>
     );
 }
