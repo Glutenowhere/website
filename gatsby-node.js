@@ -2,7 +2,7 @@ const { graphql } = require("gatsby");
 const path = require("path");
 
 
-exports.onCreateNode = ({ node, actions }) => {
+exports.onCreateNode = async ({ node, actions }) => {
     const { createNodeField } = actions
 
 
@@ -26,4 +26,32 @@ exports.onCreateNode = ({ node, actions }) => {
           createNodeField({ node, name, value });
         }
     }
+}
+
+exports.createPages = async ({ graphql, actions }) => {
+    const { createPage } = actions
+    const blogPostTemplate = path.resolve("./src/templates/blogPost.js");
+
+    const result = await graphql(`
+        {
+            allMarkdownRemark ( filter: {fields: {category: {eq: "blog"}}})
+            {   
+                nodes {
+                    fields {
+                        slug
+                    }
+                }
+            }
+        }
+    `);
+
+    result.data.allMarkdownRemark.nodes.forEach(node => {
+        createPage({
+            path: node.fields.slug,
+            component: blogPostTemplate,
+            context: {
+                slug: node.fields.slug,
+            },
+        })
+    })
 }
