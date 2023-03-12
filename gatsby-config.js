@@ -7,7 +7,6 @@ module.exports = {
     siteUrl: `https://www.yourdomain.tld`,
   },
   plugins: [
-    "gatsby-plugin-google-gtag",
     "gatsby-plugin-image",
     {
       resolve: "gatsby-plugin-manifest",
