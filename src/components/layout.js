@@ -25,7 +25,7 @@ const Layout = (props) => {
     const [showMobileMenu,setShowMobileMenu] = useState(false);
 
     const navBarTop = (
-      <nav className="navbar" role="navigation" ariaLabel="main navigation">
+      <nav className="navbar" role="navigation" aria-label="main navigation">
         <div className="navbar-brand">
           <Link to="/">
             <b>Logo</b>
@@ -33,14 +33,14 @@ const Layout = (props) => {
           <a
             role="button"
             className={`navbar-burger ${showMobileMenu?"is-active":undefined}`}
-            ariaLabel="menu"
-            ariaExpanded="false"
-            dataTarget="navbarBasicExample"
+            aria-label="menu"
+            aria-expanded="false"
+            data-target="navbarBasicExample"
             onClick={()=>setShowMobileMenu(!showMobileMenu)}
           >
-            <span ariaHidden="true"></span>
-            <span ariaHidden="true"></span>
-            <span ariaHidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
           </a>
         </div>
         <div className={`navbar-end ${!showMobileMenu?"is-hidden-touch":undefined}`}>
@@ -54,7 +54,7 @@ const Layout = (props) => {
             </Link>
           ))}
           {socialMediaItems.map((item) => (
-            <a className="navbar-item" href={item.link} target="_blank" rel="noreferrer noopener">
+            <a className="navbar-item" key={item.iconName} href={item.link} target="_blank" rel="noreferrer noopener">
               <span className="icon is-large">
                 <i className={`fab ${item.iconName}`}></i>
               </span>
@@ -68,7 +68,7 @@ const Layout = (props) => {
       <nav
         className="navbar is-hidden-touch"
         role="navigation"
-        ariaLabel="main navigation"
+        aria-label="main navigation"
       >
         <div className="navbar-brand"></div>
         <div className="navbar-menu is-flex is-justify-content-space-around">
