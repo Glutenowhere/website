@@ -31,7 +31,7 @@ const Blog = () => {
   }
   `);
   return (
-    <Layout>
+    <Layout name="Blog">
       <section className="section">
         <div className="columns is-multiline">
           {data.allMarkdownRemark.nodes.map((blogentry) => (

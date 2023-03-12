@@ -8,7 +8,7 @@ const BlogPost = ({ data }) => {
     const {frontmatter, fields, html} = markdownRemark;
 
     return (
-      <Layout>
+      <Layout name="Blog">
         <section className="section" id="header">
           <div className="container">
             <GatsbyImage

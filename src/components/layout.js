@@ -20,25 +20,6 @@ const socialMediaItems = [
 
 
 
-const navBarBottom = (
-  <nav
-    className="navbar is-hidden-touch"
-    role="navigation"
-    ariaLabel="main navigation"
-  >
-    <div className="navbar-brand"></div>
-    <div className="navbar-menu is-flex is-justify-content-space-around">
-      <div className="is-flex">
-        {navItems.map((item) => (
-          <Link className="navbar-item" to={item.link} key={item.name}>
-            {item.name}
-          </Link>
-        ))}
-      </div>
-    </div>
-  </nav>
-);
-
 const Layout = (props) => {
 
     const [showMobileMenu,setShowMobileMenu] = useState(false);
@@ -79,6 +60,25 @@ const Layout = (props) => {
               </span>
             </a>
           ))}
+        </div>
+      </nav>
+    );
+
+    const navBarBottom = (
+      <nav
+        className="navbar is-hidden-touch"
+        role="navigation"
+        ariaLabel="main navigation"
+      >
+        <div className="navbar-brand"></div>
+        <div className="navbar-menu is-flex is-justify-content-space-around">
+          <div className="is-flex">
+            {navItems.map((item) => (
+              <Link className={`navbar-item ${item.name===props.name ? "is-active" : undefined}`} to={item.link} key={item.name}>
+                {item.name}
+              </Link>
+            ))}
+          </div>
         </div>
       </nav>
     );

@@ -7,11 +7,13 @@ import Layout from "../components/layout.js"
 const IndexPage = () => {
   return (
     <Layout>
-      <section>
-        <p>Hi what's on</p>
+      <section className="section">
+        <div className="container has-text-centered">
+          <h1 className="title">Some welcoming widescreen content here!</h1>
+        </div>
       </section>
     </Layout>
-  )
+  );
 }
 
 export default IndexPage

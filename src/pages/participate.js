@@ -24,7 +24,7 @@ const Participate = () => {
     }`) 
                           
     return (
-        <Layout>
+        <Layout name="Participate">
             <section className="section">
                 <div className="columns">
                     <div className="column is-one-third">
