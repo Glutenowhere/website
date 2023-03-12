@@ -25,6 +25,7 @@ const Blog = () => {
           date(formatString: "ddd DD MMM yy")
         }
         html
+        id
       }
     }
   }
