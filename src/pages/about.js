@@ -43,6 +43,8 @@ const About = () => {
         <div className="columns">
           <div className="column is-one-third">
             <GatsbyImage
+              className="image"
+              imgClassName="is-rounded"
               alt="Image of Anne Steinhoff"
               image={data.bio.frontmatter.image.childImageSharp.gatsbyImageData}
             />
