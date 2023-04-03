@@ -5,37 +5,43 @@ import BlogCard from "../components/blogCard";
 
 const Blog = () => {
   const data = useStaticQuery(graphql`
-  {
-    allMarkdownRemark(
-    filter: {fields: {category: {eq: "blog"}}}
-    sort: {frontmatter: {date: DESC}}
-    ) {
-      nodes {
-        fields {
-          slug
-        }
-        frontmatter {
-          image {
-            childrenImageSharp {
-              gatsbyImageData(layout: CONSTRAINED)
-            }
+    {
+      allMarkdownRemark(
+        filter: { fields: { category: { eq: "blog" } } }
+        sort: { frontmatter: { date: DESC } }
+      ) {
+        nodes {
+          fields {
+            slug
           }
-          title
-          author
-          date(formatString: "ddd DD MMM yy")
+          frontmatter {
+            image {
+              childrenImageSharp {
+                gatsbyImageData(layout: CONSTRAINED)
+              }
+            }
+            title
+            author
+            date(formatString: "ddd DD MMM yy")
+          }
+          html
+          id
         }
-        html
+      }
+      file(absolutePath: { regex: "/images/food/" }) {
         id
+        childImageSharp {
+          gatsbyImageData(layout: CONSTRAINED)
+        }
       }
     }
-  }
   `);
   return (
-    <Layout name="Blog">
+    <Layout name="Blog" image={data.file.childImageSharp.gatsbyImageData}>
       <section className="section">
         <div className="columns is-multiline">
           {data.allMarkdownRemark.nodes.map((blogentry) => (
-            <div className="column is-one-quarter is-one-third-tabled is-full-mobile is-flex" key={blogentry.id}>
+            <div className="column is-one-third is-one-third-tabled is-full-mobile is-flex" key={blogentry.id}>
               <BlogCard
                 title={blogentry.frontmatter.title}
                 author={blogentry.frontmatter.author}

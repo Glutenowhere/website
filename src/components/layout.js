@@ -1,10 +1,12 @@
 import React, {useState} from "react"
-import {Link} from "gatsby"
+import {graphql, useStaticQuery, Link} from "gatsby"
+import { GatsbyImage } from "gatsby-plugin-image";
 
 const navItems = [
     {name: "About", link: "/about"},
     {name: "Blog", link: "/blog"},
-    {name: "Participate", link: "/participate"},
+    {name: "Engage", link: "/engage"},
+    {name: "Research Corner", link: "/research-corner"},
 ]
 
 const socialMediaItems = [
@@ -22,13 +24,33 @@ const socialMediaItems = [
 
 const Layout = (props) => {
 
+    const data = useStaticQuery(graphql`
+      {
+        logo: file(absolutePath: { regex: "/logo.png/" }) {
+          id
+          childImageSharp {
+            gatsbyImageData(layout: FIXED, height: 56)
+          }
+        }
+        hero: file(absolutePath: { regex: "/images/food/" }) {
+          id
+          childImageSharp {
+            gatsbyImageData(layout: CONSTRAINED)
+          }
+        }
+      }
+    `);
+
     const [showMobileMenu,setShowMobileMenu] = useState(false);
 
     const navBarTop = (
       <nav className="navbar" role="navigation" aria-label="main navigation">
         <div className="navbar-brand">
           <Link to="/">
-            <b>Logo</b>
+            <GatsbyImage 
+              alt="Logo of the project"
+              image={data.logo.childImageSharp.gatsbyImageData}
+              />
           </Link>
           <a
             role="button"
@@ -87,7 +109,13 @@ const Layout = (props) => {
       <>
         <header className="hero is-medium is-primary">
           <div className="hero-head">{navBarTop}</div>
-          <div className="hero-body">
+            <GatsbyImage
+              alt="Header background image of the website."
+              loading="eager"
+              className="background"
+              image={props.image || data.hero.childImageSharp.gatsbyImageData}
+            />
+          <div className="hero-body text-overlay">
             <p className="title is-size-1 has-text-centered">
               Coeliac Disease and the Workplace
             </p>
