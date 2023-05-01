@@ -1,6 +1,6 @@
 ---
 title: "About me"
-image: "anne.jpeg"
+image: "../../images/anne.jpg"
 ---
 
 I got diagnosed with Coeliac Disease at the beginning of my University studies. I remember how relieved I felt knowing that my suffering had a name. But the feeling of relief changed quickly: many of my symptoms remained, the restrictive diet as a young woman at University turned into a dealbreaker in friendships and relationships, and often I felt misunderstood by my family, friends and doctors.
