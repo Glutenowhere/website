@@ -17,7 +17,7 @@ const Blog = () => {
           frontmatter {
             image {
               childrenImageSharp {
-                gatsbyImageData(layout: CONSTRAINED)
+                gatsbyImageData(layout: CONSTRAINED, aspectRatio: 1)
               }
             }
             title

@@ -2,7 +2,7 @@
 title: "Undertaking a business PhD in Coeliac Disease"
 author: "Anne Steinhoff"
 date: "2022-07-05"
-image: "./talk.jpg"
+image: "../../images/undertaking a business phd.jpg"
 ---
 
 Or: can you do research in Business and Politics looking at your own disease?

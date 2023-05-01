@@ -2,7 +2,7 @@
 title: "Coeliac Disease and the never-ending story of navigating social gatherings "
 author: "Anne Steinhoff"
 date: "2022-08-25"
-image: "./placeholder.png"
+image: "../../images/coeliac disease and the neverending story.jpg"
 ---
 
 Coeliac Disease can be a real troublemaker when it comes to going out with friends, spending time with family or attending social events with co-workers. After putting a lot of pressure on myself for years, I learnt that it is okay to struggle in these situations. The new perspective helped me to find a way to enjoy these moments again.

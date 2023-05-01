@@ -2,7 +2,7 @@
 title: "How to settle into a job when living with Coeliac Disease?"
 author: "Anne Steinhoff"
 date: "2022-08-30"
-image: "./placeholder.png"
+image: "../../images/how to settle into a.jpg"
 ---
 
 University can be tricky when living with an autoimmune disease such as Coeliac Disease but starting work after graduation can have its challenges. To make the transition easier, here are a few ideas to deal with some challenges.
