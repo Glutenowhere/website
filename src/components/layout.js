@@ -32,7 +32,7 @@ const Layout = (props) => {
             gatsbyImageData(layout: FIXED, height: 56)
           }
         }
-        hero: file(absolutePath: { regex: "/images/food/" }) {
+        hero: file(absolutePath: { regex: "/images/wordcloud/" }) {
           id
           childImageSharp {
             gatsbyImageData(layout: CONSTRAINED)

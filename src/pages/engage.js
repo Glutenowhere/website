@@ -45,7 +45,7 @@ const Engage = () => {
     `); 
                           
     return (
-      <Layout name="Engage">
+      <Layout name="Engage" image={data.image.childImageSharp.gatsbyImageData}>
         <section className="section">
           <div className="columns">
             <div className="column is-one-third">
