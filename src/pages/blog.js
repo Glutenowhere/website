@@ -40,15 +40,16 @@ const Blog = () => {
     <Layout name="Blog" image={data.file.childImageSharp.gatsbyImageData}>
       <section className="section">
         <div className="columns is-multiline">
-          {data.allMarkdownRemark.nodes.map((blogentry) => (
+          {data.allMarkdownRemark.nodes.map((blogentry,idx) => (
             <div className="column is-one-third is-one-third-tabled is-full-mobile is-flex" key={blogentry.id}>
               <BlogCard
                 title={blogentry.frontmatter.title}
                 author={blogentry.frontmatter.author}
                 date={blogentry.frontmatter.date}
-                image={blogentry.frontmatter.image.childrenImageSharp[0].gatsbyImageData}
+                image={blogentry.frontmatter.image?.childrenImageSharp[0].gatsbyImageData}
                 html={blogentry.html}
                 slug={blogentry.fields.slug}
+                index={data.allMarkdownRemark.nodes.length - idx}
               />
             </div>
           ))}

@@ -11,10 +11,11 @@ const BlogPost = ({ data }) => {
       <Layout name="Blog">
         <section className="section" id="header">
           <div className="container">
-            <GatsbyImage
+            {frontmatter.image ? <GatsbyImage
               alt="Blogpost header image"
               image={frontmatter.image.childImageSharp.gatsbyImageData}
-            />
+            /> : undefined}
+
           </div>
           <div className="container">
             <h1 className="title">{frontmatter.title}</h1>

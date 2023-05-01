@@ -1,7 +1,23 @@
 $transparenthover: rgba(0, 0, 0, 0.2);
 
+$primary: #FB8E84;
+
 @import "~bulma/bulma.sass";
 
+
+// Style blog cards
+.card-image {
+    .image-replacer {
+        width: 100%;
+        background-color: $primary;
+        aspect-ratio: 1;
+        color: darken($primary,20%);
+        font-size: 4rem;
+        text-align: right;
+        padding: 1rem;
+        padding-top: calc(100% - 7rem);
+    }
+}
 
 .blog-card-text {
     position: relative;

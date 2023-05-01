@@ -2,7 +2,6 @@
 title: "COVID-19 and working from home with Coeliac Disease"
 author: "Anne Steinhoff"
 date: "2022-09-07"
-image: "./placeholder.png"
 ---
 
 On a Friday in March, I had my last working day in the office. Adjusting to the new normal had been easy on many levels but after months of working remotely full-time, there have also been some drawbacks.

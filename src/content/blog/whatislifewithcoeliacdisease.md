@@ -2,7 +2,6 @@
 title: "What is life with Coeliac Disease like?"
 author: "Anne Steinhoff"
 date: "2022-07-11"
-image: "./placeholder.png"
 ---
 
 Like many autoimmune disorders and chronic illnesses in general, Coeliac Disease comes in many forms and shapes. Having struggled to find those living with the disease who are physically or emotionally challenged by it every day, I like to stress we exist!
