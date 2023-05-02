@@ -14,10 +14,9 @@ const BlogCard = (props) => {
             {props.image ? (
               <GatsbyImage alt="picture of event" image={props.image} />
             ) : (
-              <StaticImage
-                alt="default event picture as no event picture was specified"
-                src="../../static/defaultevent.png"
-              />
+              <div className="image-replacer">
+                Blog Post {props.index}
+              </div>
             )}
           </figure>
         </div>
