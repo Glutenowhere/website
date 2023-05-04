@@ -1,6 +1,7 @@
 import React, {useState} from "react"
 import {graphql, useStaticQuery, Link} from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image";
+import WordCloud from "./wordcloud";
 
 const navItems = [
     {name: "About", link: "/about"},
@@ -20,6 +21,7 @@ const socialMediaItems = [
   },
 ];
 
+const words = ["celiac", "gluten", "people", "disease"];
 
 
 const Layout = (props) => {
@@ -109,16 +111,8 @@ const Layout = (props) => {
       <>
         <header className="hero is-medium is-primary">
           <div className="hero-head">{navBarTop}</div>
-            <GatsbyImage
-              alt="Header background image of the website."
-              loading="eager"
-              className="background"
-              image={props.image || data.hero.childImageSharp.gatsbyImageData}
-            />
           <div className="hero-body text-overlay">
-            <p className="title is-size-1 has-text-centered">
-              Coeliac Disease and the Workplace
-            </p>
+            <span className="title">Coeliac Disease and the Workplace</span>
           </div>
           <div className="hero-footer">{navBarBottom}</div>
         </header>
