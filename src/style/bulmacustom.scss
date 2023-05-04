@@ -4,6 +4,14 @@ $primary: #FB8E84;
 
 @import "~bulma/bulma.sass";
 
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Lato', sans-serif;
+}
+
 
 // Style blog cards
 .card-image {
@@ -40,6 +48,34 @@ $primary: #FB8E84;
 
 .hero {
     position: relative;
+    background-image: url("../images/logo.png");
+    background-repeat: repeat;
+    background-size: 70px 70px;
+    background-blend-mode: darken;
+
+    .title {
+        font-size: 8rem;
+    }
+
+    .hero-body {
+        padding: 2rem 4.5rem !important;
+    }
+
+    .background-pattern {
+        position: absolute;
+        object-fit: cover;
+        overflow: hidden;
+        object-position: center center;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+
+        text {
+            fill: darker( $primary, 10%);
+        }
+    }
 
     .background {
         position: absolute;
@@ -72,6 +108,11 @@ $primary: #FB8E84;
     .navbar-item.is-active {
         background-color: transparent !important;
         border: 2px solid $light;
+    }
+
+    .bottom-nav {
+        font-size: 1.5rem;
+        font-weight: bold;
     }
 
 }
