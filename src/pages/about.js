@@ -2,7 +2,18 @@ import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import Layout from "../components/layout";
 import { GatsbyImage } from "gatsby-plugin-image";
+import InfoCard from "../components/infoCard";
 
+const socialMediaItems = [
+  {
+    iconName: "fa-twitter",
+    link: "https://twitter.com/ane_ste",
+  },
+  {
+    iconName: "fa-linkedin",
+    link: "https://www.linkedin.com/in/anne-steinhoff-04689661/",
+  },
+];
 
 const About = () => {
     const data = useStaticQuery(graphql`
@@ -14,6 +25,8 @@ const About = () => {
           html
           frontmatter {
             title
+            cardTitle
+            cardSubtitle
             image {
               childImageSharp {
                 gatsbyImageData(layout: CONSTRAINED, width: 400)
@@ -23,17 +36,35 @@ const About = () => {
         }
       }
     `);
+      const infoContent = (
+        <>
+          <p className="title">{data.bio.frontmatter.cardTitle}</p>
+          <p className="subtitle">{data.bio.frontmatter.cardSubtitle}</p>
+        </>
+      );
+      const footer = (
+        <>
+          {socialMediaItems.map((item) => (
+          <a
+            className="navbar-item"
+            key={item.iconName}
+            href={item.link}
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            <span className="icon is-large">
+              <i className={`fab ${item.iconName}`}></i>
+            </span>
+          </a>
+          ))}
+        </>
+      );
   return (
     <Layout name="About">
       <section className="section">
         <div className="columns">
           <div className="column is-one-third">
-            <GatsbyImage
-              className="image"
-              imgClassName="is-rounded"
-              alt="Image of Anne Steinhoff"
-              image={data.bio.frontmatter.image.childImageSharp.gatsbyImageData}
-            />
+            <InfoCard image={data.bio.frontmatter.image.childImageSharp.gatsbyImageData} body={infoContent} footer={footer}/>
           </div>
           <div className="column is-two-thirds">
             <h1 className="title">{data.bio.frontmatter.title}</h1>

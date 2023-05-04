@@ -1,5 +1,7 @@
 ---
 title: "About me"
+cardTitle: "Anne Steinhoff"
+cardSubtitle: "Lecturer at University of Essex"
 image: "../../images/anne.jpg"
 ---
 
