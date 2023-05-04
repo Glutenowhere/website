@@ -90,7 +90,7 @@ const Layout = (props) => {
 
     const navBarBottom = (
       <nav
-        className="navbar is-hidden-touch"
+        className="navbar is-hidden-touch bottom-nav"
         role="navigation"
         aria-label="main navigation"
       >
