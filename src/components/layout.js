@@ -19,9 +19,15 @@ const socialMediaItems = [
     iconName: "fa-linkedin",
     link: "https://www.linkedin.com/in/anne-steinhoff-04689661/",
   },
+  {
+    iconName: "fa-instagram",
+    link: "https://www.instagram.com/glutenout23/",
+  }
 ];
 
 const words = ["celiac", "gluten", "people", "disease"];
+
+
 
 
 const Layout = (props) => {
