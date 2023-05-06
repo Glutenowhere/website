@@ -104,21 +104,21 @@ h1, h2, h3, h4, h5, h6 {
     .text-overlay {
         z-index: 1;
     }
+}
 
-    // Transparent hover background for navbar links in hero
-    .navbar-item {    
-        &:hover {
-            background-color: $transparenthover !important;
-        }
+// Transparent hover background for navbar links
+.navbar-item {    
+    &:hover {
+        background-color: $transparenthover !important;
     }
-    .navbar-item.is-active {
-        background-color: transparent !important;
-        border: 2px solid $light;
-    }
+}
+.navbar-item.is-active {
+    background-color: transparent !important;
+    border-left: 2px solid $light;
+    border-right: 2px solid $light;
+}
 
-    .bottom-nav {
-        font-size: 1.5rem;
-        font-weight: bold;
-    }
-
+.navbar-item {
+    font-size: 1.5rem;
+    font-weight: bold;
 }
