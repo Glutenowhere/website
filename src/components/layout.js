@@ -100,7 +100,7 @@ const Layout = (props) => {
     );
 
     return (
-      <>
+      <div className="full-size">
         <nav className="navbar is-primary" role="navigation" aria-label="main navigation">
           {navBarBrand}
           <div className={`navbar-menu ${showMobileMenu?"is-active":undefined}`}>
@@ -108,8 +108,8 @@ const Layout = (props) => {
             {navBarRight}
           </div>
         </nav>
-        <main className="container">{props.children}</main>
-      </>
+        <main className="container flex-grow">{props.children}</main>
+      </div>
     );
 }
 
