@@ -10,18 +10,19 @@ const BlogPost = ({ data }) => {
     return (
       <Layout name="Blog">
         <section className="section" id="header">
-          <div className="container">
-            {frontmatter.image ? <GatsbyImage
-              alt="Blogpost header image"
-              image={frontmatter.image.childImageSharp.gatsbyImageData}
-            /> : undefined}
-
-          </div>
+          <div className="container"></div>
           <div className="container">
             <h1 className="title">{frontmatter.title}</h1>
             <h2 className="subtitle">
               by {frontmatter.author} &mdash; {frontmatter.date}
             </h2>
+            {frontmatter.image ? (
+              <GatsbyImage
+                alt="Blogpost header image"
+                className="Blogpost image"
+                image={frontmatter.image.childImageSharp.gatsbyImageData}
+              />
+            ) : undefined}
             <div
               className="content"
               dangerouslySetInnerHTML={{ __html: html }}
