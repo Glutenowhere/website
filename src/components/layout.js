@@ -100,15 +100,29 @@ const Layout = (props) => {
     );
 
     return (
-      <div className="full-size">
-        <nav className="navbar is-primary" role="navigation" aria-label="main navigation">
+      <div
+        className={`full-size ${
+          props.name === "landing" ? "is-landing" : undefined
+        }`}
+      >
+        <nav
+          className="navbar is-primary"
+          role="navigation"
+          aria-label="main navigation"
+        >
           {navBarBrand}
-          <div className={`navbar-menu ${showMobileMenu?"is-active":undefined}`}>
+          <div
+            className={`navbar-menu ${
+              showMobileMenu ? "is-active" : undefined
+            }`}
+          >
             {navBarLeft}
             {navBarRight}
           </div>
         </nav>
-        <main className="container flex-grow">{props.children}</main>
+        <main className={`container flex-grow`}>
+          {props.children}
+        </main>
       </div>
     );
 }

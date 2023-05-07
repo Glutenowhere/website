@@ -16,30 +16,29 @@ const IndexPage = () => {
           html
           frontmatter {
             title
-            image {
-              childImageSharp {
-                gatsbyImageData(layout: CONSTRAINED, width: 400)
-              }
-            }
+            cards
           }
         }
       }
     `);
 
   return (
-    <Layout>
+    <Layout name="landing">
       <section className="section">
-        
-          <h1 className="title">{data.project.frontmatter.title}</h1>
-          <div className="columns">
-            <div className="column is-one-third">
-          <InfoCard body={<p className="title has-background-primary has-text-white">"This website is intended to help share lived experiences of coeliac disease. It also wants to help make research data on coeliac disease more accessible."</p>}/>
-          </div>
-          <div className="column is-two-thirds">
-          <div className="content" dangerouslySetInnerHTML={{ __html: data.project.html }}></div>
-          </div>
-          </div>
-
+        <h1 className="title">{data.project.frontmatter.title}</h1>
+        <div className="columns is-centered is-multiline">
+          {data.project.frontmatter.cards.map((card) => (
+            <div className="column is-one-third flex-grow-1">
+              <InfoCard key={card} body={<p className="title">{card}</p>} />
+            </div>
+          ))}
+        </div>
+        <div className="column is-two-thirds">
+          <div
+            className="content"
+            dangerouslySetInnerHTML={{ __html: data.project.html }}
+          ></div>
+        </div>
       </section>
     </Layout>
   );

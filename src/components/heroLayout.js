@@ -122,7 +122,7 @@ const Layout = (props) => {
           </div>
           <div className="hero-footer">{navBarBottom}</div>
         </header>
-        <main className="container">{props.children}</main>
+        <main className={`container ${props.name==="landing"?"is-landing":undefined}`}>{props.children}</main>
       </>
     );
 }

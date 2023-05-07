@@ -19,8 +19,13 @@ h1, h2, h3, h4, h5, h6 {
     flex-direction: column;
 }
 
+.is-fullheight {
+    height: 100%;
+}
 
-// Style blog cards
+
+// Style cards
+
 .card-image {
     .image-replacer {
         width: 100%;
@@ -128,4 +133,13 @@ h1, h2, h3, h4, h5, h6 {
 .navbar-item {
     font-size: 1.5rem;
     font-weight: bold;
+}
+
+// background of landing page 
+.is-landing {
+    background-color: $primary;
+    background-image: url("../images/crop.png");
+    background-repeat: repeat;
+    background-size: 70px 70px;
+    background-blend-mode: darken;
 }
