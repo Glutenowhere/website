@@ -30,11 +30,14 @@ h1, h2, h3, h4, h5, h6 {
         width: 100%;
         background-color: $primary;
         aspect-ratio: 1;
-        color: darken($primary,20%);
+        color: $light;
         font-size: 4rem;
+        font-weight: bold;
         text-align: right;
         padding: 1rem;
-        padding-top: calc(100% - 7rem);
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
     }
 }
 
