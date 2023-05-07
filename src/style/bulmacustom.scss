@@ -23,6 +23,19 @@ h1, h2, h3, h4, h5, h6 {
     height: 100%;
 }
 
+//Styling for pictures in blog
+.blog-image {
+  float: left;
+  width: 400px;
+  margin-right: 2rem;
+
+  @media (max-width: $tablet) {
+        float: none;
+        width: 100%;
+        height: auto;
+        margin: 0 0 2rem 0; 
+  }
+}
 
 // Style cards
 .card-image {

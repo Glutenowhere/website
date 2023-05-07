@@ -19,7 +19,7 @@ const BlogPost = ({ data }) => {
             {frontmatter.image ? (
               <GatsbyImage
                 alt="Blogpost header image"
-                className="Blogpost image"
+                className="blog-image"
                 image={frontmatter.image.childImageSharp.gatsbyImageData}
               />
             ) : undefined}
