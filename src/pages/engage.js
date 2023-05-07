@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useEffect} from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image";
 import Layout from "../components/layout"
@@ -43,6 +43,11 @@ const Engage = () => {
             }
       }
     `); 
+
+    useEffect(() => console.log(data.markdownRemark.frontmatter.title), [data]);
+
+    // Split tile by line break
+    const titles = data.markdownRemark.frontmatter.title.split("\n");
                           
     return (
       <Layout name="Engage" image={data.image.childImageSharp.gatsbyImageData}>
@@ -58,31 +63,31 @@ const Engage = () => {
               />
             </div>
             <div className="column is-two-thirds">
-              <h1 className="title">{data.markdownRemark.frontmatter.title}</h1>
+              {titles.map((title) => (
+                <h1 className="title">{title}</h1>
+              ))}
               <div
                 className="content"
                 dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
               ></div>
-              <ul>
-                <li>
-                  <a
-                    href={data.infopdf.publicURL}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Information sheet
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href={data.consentpdf.publicURL}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Consent form
-                  </a>
-                </li>
-              </ul>
+              <div className="buttons">
+                <a
+                  href={data.infopdf.publicURL}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="button is-primary is-size-5"
+                >
+                  Information sheet
+                </a>
+                <a
+                  href={data.consentpdf.publicURL}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="button is-primary is-size-5"
+                >
+                  Consent form
+                </a>
+              </div>
             </div>
           </div>
         </section>
