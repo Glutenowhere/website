@@ -119,7 +119,11 @@ const Layout = (props) => {
             {navBarRight}
           </div>
         </nav>
-        <main className={`container flex-grow`}>
+        <main
+          className={`container flex-grow ${
+            props.name === "landing" ? "is-flex" : undefined
+          }`}
+        >
           {props.children}
         </main>
       </div>
