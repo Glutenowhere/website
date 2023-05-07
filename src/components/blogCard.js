@@ -8,40 +8,42 @@ const BlogCard = (props) => {
       className="card is-flex is-flex-direction-column is-flex-grow-1"
       key={props.slug}
     >
-      <Link to={`${props.slug}/#header`}>
-        <div className="card-image">
+      
+      <div className="card-image">
+        <Link to={`${props.slug}/#header`}>
           <figure className="image">
             {props.image ? (
               <GatsbyImage alt="picture of event" image={props.image} />
             ) : (
-              <div className="image-replacer">
-                Blog Post {props.index}
-              </div>
+              <div className="image-replacer">Blog Post {props.index}</div>
             )}
           </figure>
-        </div>
+        </Link>
+      </div>
 
-        <div className="card-content">
-          <div className="media">
-            <div className="media-content">
-              <p className="subtitle is-6">{props.date || null}</p>
-              <p className="title is-4">{props.title || "New Blog Entry"} </p>
-              <p className="subtitle is-6"> by {props.author}</p>
-            </div>
-          </div>
-          <div className="content">
-            <div className="blog-card-text" dangerouslySetInnerHTML={{__html:props.html}}></div>
-          </div>
-          <div className="card-footer p-2 has-text-centered is-align-self-center">
-            <Link
-              to={`${props.slug}/#header`}
-              className="has-text-link has-text-weight-bold"
-            >
-              Read More
-            </Link>
+      <div className="card-content is-flex is-flex-direction-column is-flex-grow-1">
+        <div className="media is-flex-grow-1">
+          <div className="media-content">
+            <p className="subtitle is-6">{props.date || null}</p>
+            <p className="title is-4">{props.title || "New Blog Entry"} </p>
+            <p className="subtitle is-6"> by {props.author}</p>
           </div>
         </div>
-      </Link>
+        <div className="content">
+          <div
+            className="blog-card-text"
+            dangerouslySetInnerHTML={{ __html: props.html }}
+          ></div>
+        </div>
+        <div className="card-footer p-2 has-text-centered is-align-self-center">
+          <Link
+            to={`${props.slug}/#header`}
+            className="has-text-link has-text-weight-bold"
+          >
+            Read More
+          </Link>
+        </div>
+      </div>
     </div>
   );
 };
