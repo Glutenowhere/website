@@ -9,7 +9,7 @@ const ResearchCorner = () => {
           {
             description: markdownRemark(
               fields: { category: { eq: "research-corner" } }
-              fileAbsolutePath: { regex: "/research/" }
+              fileAbsolutePath: { regex: "/research.md/" }
             ) {
               id
               html
