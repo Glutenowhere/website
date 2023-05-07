@@ -1,5 +1,5 @@
 ---
-title: "Project information"
+title: "Coeliac Disease and the Workplace"
 cards: ["This website is intended to help share lived experiences of coeliac disease.",
         "It also wants to help make research data on coeliac disease more accessible."]
 ---

@@ -4,6 +4,13 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import { graphql, useStaticQuery } from "gatsby";
 import Layout from "../components/layout.js";
 import InfoCard from "../components/infoCard";
+import PatternBackground from "../components/patternBackground";
+
+
+const instagram = {
+  iconName: "fa-instagram",
+  link: "https://www.instagram.com/glutenout23/",
+};
 
 
 const IndexPage = () => {
@@ -25,6 +32,7 @@ const IndexPage = () => {
   return (
     <Layout name="landing">
       <section className="section">
+        {/* <PatternBackground/> */}
         <h1 className="title">{data.project.frontmatter.title}</h1>
         <div className="columns is-centered is-multiline">
           {data.project.frontmatter.cards.map((card) => (
@@ -33,11 +41,30 @@ const IndexPage = () => {
             </div>
           ))}
         </div>
-        <div className="column is-two-thirds">
-          <div
-            className="content"
-            dangerouslySetInnerHTML={{ __html: data.project.html }}
-          ></div>
+        <div className="columns">
+          <div className="column has-text-centered">
+            <p className="title">
+              <a
+                key={instagram.iconName}
+                href={instagram.link}
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <span className="icon is-large">
+                  <i className={`fab ${instagram.iconName}`}></i>
+                </span>
+                Follow me on Instagram!
+              </a>
+            </p>
+          </div>
+        </div>
+        <div className="columns is-centered">
+          <div className="column is-two-thirds">
+            <div
+              className="content"
+              dangerouslySetInnerHTML={{ __html: data.project.html }}
+            ></div>
+          </div>
         </div>
       </section>
     </Layout>

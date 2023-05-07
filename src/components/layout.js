@@ -1,7 +1,6 @@
 import React, {useState} from "react"
 import {graphql, useStaticQuery, Link} from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image";
-import WordCloud from "./wordcloud";
 
 const navItems = [
     {name: "About", link: "/about"},
