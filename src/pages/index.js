@@ -6,12 +6,10 @@ import Layout from "../components/layout.js";
 import InfoCard from "../components/infoCard";
 import PatternBackground from "../components/patternBackground";
 
-
 const instagram = {
   iconName: "fa-instagram",
   link: "https://www.instagram.com/glutenout23/",
 };
-
 
 const IndexPage = () => {
     const data = useStaticQuery(graphql`
@@ -31,17 +29,23 @@ const IndexPage = () => {
 
   return (
     <Layout name="landing">
-      <section className="section">
-        {/* <PatternBackground/> */}
-        <h1 className="title">{data.project.frontmatter.title}</h1>
-        <div className="columns is-centered is-multiline">
-          {data.project.frontmatter.cards.map((card) => (
-            <div className="column is-one-third flex-grow-1">
-              <InfoCard key={card} body={<p className="title">{card}</p>} />
-            </div>
-          ))}
+      <section className="section is-flex is-flex-direction-column is-justify-content-space-between">
+        <div className="columns is-flex-grow-1">
+          <div className="column is-two-thirds">
+            <h1 className="title">{data.project.frontmatter.title}</h1>
+          </div>
+          <div className="column is-one-third">
+            {data.project.frontmatter.cards.map((card) => (
+              <div className="columns">
+                <div className="column is-full">
+                  <InfoCard key={card} body={<p className="title">{card}</p>} />
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
-        <div className="columns">
+
+        <div className="columns mt-6">
           <div className="column has-text-centered">
             <p className="title">
               <a
@@ -58,6 +62,7 @@ const IndexPage = () => {
             </p>
           </div>
         </div>
+
         <div className="columns is-centered">
           <div className="column is-two-thirds">
             <div
