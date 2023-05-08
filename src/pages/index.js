@@ -62,7 +62,8 @@ const IndexPage = () => {
                   <span className="icon is-large">
                     <i className={`fab ${instagram.iconName}`}></i>
                   </span>
-                  Follow me on Instagram!
+                  Follow me on Instagram for gluten-free food, travel and work
+                  tips!
                 </a>
               </p>
             </div>
