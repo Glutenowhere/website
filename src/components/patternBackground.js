@@ -18,11 +18,10 @@ const PatternBackground = () => {
       <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <pattern
-            id="star"
+            id="no-gluten"
             viewBox="0, 0 ,20,20"
             width="20%"
             height="20%"
-            patternContentUnits="objectBoundingBox"
           >
             <image
               xlinkHref={data.file.publicURL}
@@ -40,8 +39,8 @@ const PatternBackground = () => {
           y="0"
           width="100%"
           height="100%"
-          fill="url(#star)"
-          opacity="0.1"
+          fill="url(#no-gluten)"
+          opacity="0.2"
         />
       </svg>
     );
