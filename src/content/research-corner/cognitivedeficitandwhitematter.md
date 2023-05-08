@@ -6,6 +6,17 @@ in: "Gastroenterology. 158(8):2112-2122"
 link: "https://www.gastrojournal.org/article/S0016-5085(20)30239-0/fulltext"
 ---
 
-Minim excepteur amet nulla consequat mollit ipsum irure sit. Magna esse nulla est magna nulla consequat. Veniam id ipsum ullamco dolore cupidatat minim qui voluptate amet cupidatat. Aliqua ullamco reprehenderit deserunt magna eiusmod deserunt dolor aliqua. Amet sint commodo qui id occaecat voluptate elit voluptate labore ex qui incididunt.
+Use of National UK Biobank data to compare individuals diagnosed with coeliac disease (n = 104; mean age, 63 years; 65% female) against a control group without coeliac disease (n = 198; mean age, 63 years; 67% female). Data analysis investigated the areas of cognitive deficits, mental health problems, and white matter disease in all these individuals.
+<br><br>
+**Results:**
 
-Incididunt anim ad labore ullamco in consequat officia incididunt. Ipsum qui pariatur nostrud anim ullamco fugiat anim enim ex cillum fugiat. Sunt ullamco ipsum labore incididunt incididunt elit officia.
+In comparison to the healthy control group, individuals with celiac disease had
+
+- significant deficits in reaction time (P = .004)
+- significantly higher proportions had indications of anxiety (P = .025), depression (P = .015), thoughts of self-harm (P = .025) and health-related unhappiness (P = .010)
+- significantly increased axial diffusivity in widespread locations of the brain
+ 
+<br><br>
+**Conclusion:**
+
+Coeliac disease is associated with neurologic and psychological features and can impact cognitive skills, mental health and white matter in the deeper tissues of the brain.

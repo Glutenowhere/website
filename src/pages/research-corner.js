@@ -54,6 +54,11 @@ const ResearchCorner = () => {
               dangerouslySetInnerHTML={{ __html: data.description.html }}
             ></div>
           </div>
+          <div className="column is-one-third">
+            <span style={{ fontSize: "300px" }}>
+              <i class="fas fa-book "></i>
+            </span>
+          </div>
         </div>
       </section>
       <section className="section">

@@ -26,6 +26,13 @@ h1, h2, h3, h4, h5, h6 {
     height: 100%;
 }
 
+main {
+    ul {
+        list-style: square;
+        padding-left: 2.5rem;
+    }
+}
+
 //Styling for pictures in blog
 .blog-image {
   float: left;
@@ -168,7 +175,7 @@ h1, h2, h3, h4, h5, h6 {
 
 // background of landing page 
 .is-landing {
-    // background-color: $primary;
+    position: relative;
     margin: 0 !important;
     padding: 0 !important;
     a {
