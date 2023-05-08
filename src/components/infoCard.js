@@ -20,7 +20,7 @@ const InfoCard = ({body,image,footer}) => {
                             </p>
                             </footer> : undefined;
     return (
-      <div class="card">
+      <div className="card is-fullheight">
         {imageContent}
         {bodyContent}
         {footerContent}

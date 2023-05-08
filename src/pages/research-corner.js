@@ -9,7 +9,7 @@ const ResearchCorner = () => {
           {
             description: markdownRemark(
               fields: { category: { eq: "research-corner" } }
-              fileAbsolutePath: { regex: "/research/" }
+              fileAbsolutePath: { regex: "/research.md/" }
             ) {
               id
               html
@@ -47,15 +47,6 @@ const ResearchCorner = () => {
     <Layout name="Research Corner">
       <section className="section">
         <div className="columns">
-          <div className="column is-one-third">
-            <GatsbyImage
-              alt="Image about participating in the project"
-              image={
-                data.description.frontmatter.image.childImageSharp
-                  .gatsbyImageData
-              }
-            />
-          </div>
           <div className="column is-two-thirds">
             <h1 className="title">{data.description.frontmatter.title}</h1>
             <div

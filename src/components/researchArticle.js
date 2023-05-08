@@ -11,17 +11,18 @@ const ResearchArticle = ({ article }) => {
         </h3>
         <div className="buttons">
           <button
-            className="button is-primary"
+            className="button is-primary is-size-5"
             onClick={() => setShowSummary(!showSummary)}
           >
             {showSummary ? "Hide Summary" : "Show Summary"}
           </button>
           <a
+            className="button is-primary is-size-5"
             href={article.frontmatter.link}
             target="_blank"
             rel="noopener noreferrer"
           >
-            <button className="button is-primary">Link</button>
+            Link
           </a>
           {showSummary ? (
             <div dangerouslySetInnerHTML={{ __html: article.html }}></div>

@@ -1,7 +1,6 @@
 import React, {useState} from "react"
 import {graphql, useStaticQuery, Link} from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image";
-import WordCloud from "./wordcloud";
 
 const navItems = [
     {name: "About", link: "/about"},
@@ -25,11 +24,6 @@ const socialMediaItems = [
   }
 ];
 
-const words = ["celiac", "gluten", "people", "disease"];
-
-
-
-
 const Layout = (props) => {
 
     const data = useStaticQuery(graphql`
@@ -51,79 +45,88 @@ const Layout = (props) => {
 
     const [showMobileMenu,setShowMobileMenu] = useState(false);
 
-    const navBarTop = (
-      <nav className="navbar" role="navigation" aria-label="main navigation">
-        <div className="navbar-brand">
-          <Link to="/">
-            <GatsbyImage 
-              alt="Logo of the project"
-              image={data.logo.childImageSharp.gatsbyImageData}
-              />
-          </Link>
-          <a
-            role="button"
-            className={`navbar-burger ${showMobileMenu?"is-active":undefined}`}
-            aria-label="menu"
-            aria-expanded="false"
-            data-target="navbarBasicExample"
-            onClick={()=>setShowMobileMenu(!showMobileMenu)}
-          >
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-          </a>
-        </div>
-        <div className={`navbar-end ${!showMobileMenu?"is-hidden-touch":undefined}`}>
-          {navItems.map((item) => (
-            <Link
-              className="navbar-item is-hidden-desktop"
-              to={item.link}
-              key={item.name}
-            >
-              {item.name}
-            </Link>
-          ))}
-          {socialMediaItems.map((item) => (
-            <a className="navbar-item" key={item.iconName} href={item.link} target="_blank" rel="noreferrer noopener">
-              <span className="icon is-large">
-                <i className={`fab ${item.iconName}`}></i>
-              </span>
-            </a>
-          ))}
-        </div>
-      </nav>
+    const navBarBrand = (
+      <div className="navbar-brand">
+        <Link to="/">
+          <GatsbyImage
+            alt="Logo of the project"
+            image={data.logo.childImageSharp.gatsbyImageData}
+          />
+        </Link>
+        <a
+          role="button"
+          className={`navbar-burger ${
+            showMobileMenu ? "is-active" : undefined
+          }`}
+          aria-label="menu"
+          aria-expanded="false"
+          data-target="navbarBasicExample"
+          onClick={() => setShowMobileMenu(!showMobileMenu)}
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
     );
 
-    const navBarBottom = (
-      <nav
-        className="navbar is-hidden-touch bottom-nav"
-        role="navigation"
-        aria-label="main navigation"
-      >
-        <div className="navbar-brand"></div>
-        <div className="navbar-menu is-flex is-justify-content-space-around">
-          <div className="is-flex">
+    const navBarLeft = (
+        <div className="navbar-start">
             {navItems.map((item) => (
               <Link className={`navbar-item ${item.name===props.name ? "is-active" : undefined}`} to={item.link} key={item.name}>
                 {item.name}
               </Link>
             ))}
-          </div>
         </div>
-      </nav>
+    );
+
+    const navBarRight = (
+      <div className={`navbar-end`}>
+        {socialMediaItems.map((item) => (
+          <a
+            className="navbar-item"
+            key={item.iconName}
+            href={item.link}
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            <span className="icon is-large">
+              <i className={`fab ${item.iconName}`}></i>
+            </span>
+          </a>
+        ))}
+      </div>
     );
 
     return (
-      <>
-        <header className="hero is-medium is-primary">
-          <div className="hero-head">{navBarTop}</div>
-          <div className="hero-body text-overlay">
-            <span className="title">Coeliac Disease and the Workplace</span>
+      <div
+        className={`full-size ${
+          props.name === "landing" ? "is-landing" : undefined
+        }`}
+      >
+        <nav
+          className="navbar is-primary"
+          role="navigation"
+          aria-label="main navigation"
+        >
+          {navBarBrand}
+          <div
+            className={`navbar-menu ${
+              showMobileMenu ? "is-active" : undefined
+            }`}
+          >
+            {navBarLeft}
+            {navBarRight}
           </div>
-          <div className="hero-footer">{navBarBottom}</div>
-        </header>
-        <main className="container">{props.children}</main>
-      </>
+        </nav>
+        <main
+          className={`container flex-grow ${
+            props.name === "landing" ? "is-flex" : undefined
+          }`}
+        >
+          {props.children}
+        </main>
+      </div>
     );
 }
 
