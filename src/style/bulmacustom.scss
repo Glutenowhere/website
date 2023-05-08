@@ -154,9 +154,23 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
 }
 
+// pattern background
+.pattern-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color: $primary;
+    overflow: hidden;
+}
+
 // background of landing page 
 .is-landing {
-    background-color: $primary;
+    // background-color: $primary;
+    margin: 0 !important;
+    padding: 0 !important;
     a {
         color: black;
     }
@@ -168,5 +182,9 @@ h1, h2, h3, h4, h5, h6 {
         h1.title {
             font-size: 3rem;
         }
+    }
+
+    main {
+        position: static;
     }
 }

@@ -4,7 +4,7 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import { graphql, useStaticQuery } from "gatsby";
 import Layout from "../components/layout.js";
 import InfoCard from "../components/infoCard";
-import PatternBackground from "../components/patternBackground";
+import PatternBackgound from "../components/patternBackground";
 
 const instagram = {
   iconName: "fa-instagram",
@@ -28,8 +28,9 @@ const IndexPage = () => {
     `);
 
   return (
-    <Layout name="landing">
-
+    <>
+      <Layout name="landing">
+        <PatternBackgound />
         <section className="section is-flex is-flex-direction-column is-justify-content-space-between">
           <div className="columns is-flex-grow-1">
             <div className="column is-two-thirds">
@@ -76,8 +77,8 @@ const IndexPage = () => {
             </div>
           </div>
         </section>
-
-    </Layout>
+      </Layout>
+    </>
   );
 }
 
