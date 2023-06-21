@@ -78,7 +78,7 @@ const About = () => {
           <div className="column is-two-thirds">
             <h1 className="title">{data.bio.frontmatter.title}</h1>
             <div
-              className="content"
+              className="content has-text-justified"
               dangerouslySetInnerHTML={{ __html: data.bio.html }}
             ></div>
           </div>
