@@ -67,7 +67,7 @@ const Engage = () => {
                 <h1 className="title">{title}</h1>
               ))}
               <div
-                className="content"
+                className="content has-text-justified"
                 dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
               ></div>
               <div className="buttons">
