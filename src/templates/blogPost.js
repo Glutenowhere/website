@@ -24,7 +24,7 @@ const BlogPost = ({ data }) => {
               />
             ) : undefined}
             <div
-              className="content"
+              className="content has-text-justified"
               dangerouslySetInnerHTML={{ __html: html }}
             ></div>
           </div>
