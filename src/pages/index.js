@@ -31,41 +31,45 @@ const IndexPage = () => {
     <>
       <Layout name="landing">
         <PatternBackgound />
-        <section className="section is-flex is-flex-direction-column is-justify-content-space-between">
-          <div className="columns is-flex-grow-1">
-            <div className="column is-two-thirds">
-              <h1 className="title">{data.project.frontmatter.title}</h1>
-            </div>
-            <div className="column is-one-third">
-              {data.project.frontmatter.cards.map((card) => (
-                <div className="columns">
-                  <div className="column is-full">
-                    <InfoCard
-                      key={card}
-                      body={<p className="title has-text-left">{card}</p>}
-                    />
-                  </div>
+        <section className="section is-flex is-flex-direction-column is-justify-content-space-around">
+          {/* <div className="columns is-flex-grow-1 is-multiline">
+            <div className="column is-full"> */}
+          <h1 className="title">{data.project.frontmatter.title}</h1>
+          {/* </div>
+          </div> */}
+          <div className="columns is-flex is-justify-content-center">
+            {data.project.frontmatter.cards.map((card) => (
+              <div className="column is-two-fifths">
+                <div className="box is-fullheight p-6">
+                  <p className="title has-text-left">{card}</p>
+                  {/* <InfoCard
+                    key={card}
+                    body={}
+                    fullheight={true}
+                  /> */}
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
 
-          <div className="columns">
-            <div className="column has-text-centered">
-              <p className="title">
-                <a
-                  key={instagram.iconName}
-                  href={instagram.link}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                >
-                  <span className="icon is-large">
-                    <i className={`fab ${instagram.iconName}`}></i>
-                  </span>
-                  Follow me on Instagram for gluten-free food, travel and work
-                  tips!
-                </a>
-              </p>
+          <div className="columns is-flex is-justify-content-center">
+            <div className="column has-text-centered is-four-fifths">
+              <div className="box">
+                <p className="title">
+                  <a
+                    key={instagram.iconName}
+                    href={instagram.link}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                  >
+                    <span className="icon is-large">
+                      <i className={`fab ${instagram.iconName}`}></i>
+                    </span>
+                    Follow me on Instagram for gluten-free food, travel and work
+                    tips!
+                  </a>
+                </p>
+              </div>
             </div>
           </div>
 

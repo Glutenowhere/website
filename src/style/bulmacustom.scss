@@ -182,15 +182,22 @@ main {
     margin: 0 !important;
     padding: 0 !important;
     a {
-        color: black;
+        color: $dark;
+    }
+    .box {
+        border-radius: 50px;
+
     }
     h1.title {
         color: $light;
-        font-size: 7rem;
+        font-size: 4rem;
+        font-weight: bold;
+        text-align: center;
+        text-shadow: 2px 2px $dark;
     }
     @media (max-width: $tablet) {
         h1.title {
-            font-size: 3rem;
+            font-size: 3rem;   
         }
     }
 
