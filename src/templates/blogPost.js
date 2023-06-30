@@ -14,7 +14,7 @@ const BlogPost = ({ data }) => {
           <div className="container">
             <h1 className="title">{frontmatter.title}</h1>
             <h2 className="subtitle">
-              by {frontmatter.author} &mdash; {frontmatter.date}
+              by {frontmatter.author} 
             </h2>
             {frontmatter.image ? (
               <GatsbyImage
