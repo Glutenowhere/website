@@ -8,7 +8,6 @@ const BlogCard = (props) => {
       className="card is-flex is-flex-direction-column is-flex-grow-1"
       key={props.slug}
     >
-      
       <div className="card-image">
         <Link to={`${props.slug}/#header`}>
           <figure className="image">
@@ -24,7 +23,9 @@ const BlogCard = (props) => {
       <div className="card-content is-flex is-flex-direction-column is-flex-grow-1">
         <div className="media is-flex-grow-1">
           <div className="media-content">
-            <p className="title is-4">{props.title || "New Blog Entry"} </p>
+            <p className="title is-4 has-text-left">
+              {props.title || "New Blog Entry"}{" "}
+            </p>
             <p className="subtitle is-6"> by {props.author}</p>
           </div>
         </div>
