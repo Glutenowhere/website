@@ -1,7 +1,7 @@
 import React from 'react';
 import { GatsbyImage } from 'gatsby-plugin-image';
 
-const InfoCard = ({body,image,footer}) => {
+const InfoCard = ({body,image,footer,fullheight}) => {
     const imageContent = image ? (
         <div className="card-image">
             <figure className="image">
@@ -20,7 +20,7 @@ const InfoCard = ({body,image,footer}) => {
                             </p>
                             </footer> : undefined;
     return (
-      <div className="card is-fullheight">
+      <div className={`card ${fullheight ? "is-fullheight" : undefined}`}>
         {imageContent}
         {bodyContent}
         {footerContent}

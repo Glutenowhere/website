@@ -42,7 +42,7 @@ const IndexPage = () => {
                   <div className="column is-full">
                     <InfoCard
                       key={card}
-                      body={<p className="title">{card}</p>}
+                      body={<p className="title has-text-left">{card}</p>}
                     />
                   </div>
                 </div>

@@ -33,7 +33,7 @@ const About = () => {
             cardSubtitle
             image {
               childImageSharp {
-                gatsbyImageData(layout: CONSTRAINED, width: 400, aspectRatio: 0.75)
+                gatsbyImageData(layout: CONSTRAINED, width: 400, aspectRatio: 1)
                 
               }
             }
