@@ -40,6 +40,18 @@ const Layout = (props) => {
             gatsbyImageData(layout: CONSTRAINED)
           }
         }
+        socialMedia: allMarkdownRemark(
+          filter: { fields: { category: { eq: "socialmedia" } } }
+        ) {
+          nodes {
+            id
+            frontmatter {
+              name
+              link
+              iconName
+            }
+          }
+        }
       }
     `);
 
@@ -82,16 +94,16 @@ const Layout = (props) => {
 
     const navBarRight = (
       <div className={`navbar-end`}>
-        {socialMediaItems.map((item) => (
+        {data.socialMedia.nodes.map((item) => (
           <a
             className="navbar-item"
-            key={item.iconName}
-            href={item.link}
+            key={item.id}
+            href={item.frontmatter.link}
             target="_blank"
             rel="noreferrer noopener"
           >
             <span className="icon is-large">
-              <i className={`fab ${item.iconName}`}></i>
+              <i className={`fab ${item.frontmatter.iconName}`}></i>
             </span>
           </a>
         ))}

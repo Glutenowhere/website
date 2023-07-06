@@ -172,7 +172,7 @@ main {
     width: 100%;
     height: 100%;
     z-index: -1;
-    background-color: $primary;
+    background-color: transparent;
     overflow: hidden;
 }
 
@@ -182,18 +182,15 @@ main {
     margin: 0 !important;
     padding: 0 !important;
     a {
-        color: $dark;
-    }
-    .box {
-        border-radius: 50px;
-
-    }
-    h1.title {
         color: $light;
-        font-size: 4rem;
+    }
+
+    h1.title {
+        color: $primary;
+        font-size: 6rem;
         font-weight: bold;
-        text-align: center;
-        text-shadow: 2px 2px $dark;
+        text-align: left;
+        // text-shadow: 2px 2px $dark;
     }
     @media (max-width: $tablet) {
         h1.title {
