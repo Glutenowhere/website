@@ -86,6 +86,11 @@ main {
     background-image: linear-gradient(180deg, transparent 0, white 100%);
 }
 
+.border {
+    border: 2px solid $light;
+    border-radius: 5px;
+}
+
 .hero {
     position: relative;
     background-image: url("../images/logo.png");
@@ -191,6 +196,11 @@ main {
         font-weight: bold;
         text-align: left;
         // text-shadow: 2px 2px $dark;
+    }
+    @media (max-width: $widescreen) {
+        h1.title {
+            font-size: 5rem;
+        }
     }
     @media (max-width: $tablet) {
         h1.title {
