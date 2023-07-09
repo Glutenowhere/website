@@ -4,13 +4,6 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import { graphql, useStaticQuery } from "gatsby";
 import Layout from "../components/layout.js";
 
-const instagram = {
-  iconName: "fa-instagram",
-  link: "https://www.instagram.com/glutenout23/",
-};
-
-
-
 const IndexPage = () => {
     const data = useStaticQuery(graphql`
       {

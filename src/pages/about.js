@@ -1,23 +1,7 @@
 import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import Layout from "../components/layout";
-import { GatsbyImage } from "gatsby-plugin-image";
 import InfoCard from "../components/infoCard";
-
-const socialMediaItems = [
-  {
-    iconName: "fa-twitter",
-    link: "https://twitter.com/ane_ste",
-  },
-  {
-    iconName: "fa-linkedin",
-    link: "https://www.linkedin.com/in/anne-steinhoff-04689661/",
-  },
-  {
-    iconName: "fa-instagram",
-    link: "https://www.instagram.com/glutenout23/",
-  },
-];
 
 const About = () => {
     const data = useStaticQuery(graphql`
@@ -34,8 +18,19 @@ const About = () => {
             image {
               childImageSharp {
                 gatsbyImageData(layout: CONSTRAINED, width: 400, aspectRatio: 1)
-                
               }
+            }
+          }
+        }
+        socialMedia: allMarkdownRemark(
+          filter: { fields: { category: { eq: "socialmedia" } } }
+        ) {
+          nodes {
+            id
+            frontmatter {
+              name
+              link
+              iconName
             }
           }
         }
@@ -49,16 +44,16 @@ const About = () => {
       );
       const footer = (
         <>
-          {socialMediaItems.map((item) => (
+          {data.socialMedia.nodes.map((item) => (
           <a
             className="navbar-item"
-            key={item.iconName}
-            href={item.link}
+            key={item.id}
+            href={item.frontmatter.link}
             target="_blank"
             rel="noreferrer noopener"
           >
             <span className="icon is-large">
-              <i className={`fab ${item.iconName}`}></i>
+              <i className={`fab ${item.frontmatter.iconName}`}></i>
             </span>
           </a>
           ))}
