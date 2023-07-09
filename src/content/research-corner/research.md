@@ -1,5 +1,6 @@
 ---
 title: ""
+image: "research.png"
 ---
 
 The research corner intends to help share research-based information about Coeliac Disease in a summarised way. 
