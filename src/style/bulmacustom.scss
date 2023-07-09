@@ -6,10 +6,24 @@ $link: $primary;
 @import "~bulma/bulma.sass";
 
 body {
+    position: relative;
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
     font-size: 20px;
 }
+
+// body::after {
+//     content: "";
+//     opacity: 0.5;
+//     top: 0;
+//     left: 0;
+//     bottom: 0;
+//     right: 0;
+//     position: absolute;
+//     // z-index: -1;
+//     background-color: $white;  
+
+// }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Lato', sans-serif;
@@ -18,9 +32,27 @@ h1, h2, h3, h4, h5, h6 {
 
 // always stretch content to full height
 .full-size {
+    position: relative;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    background-color: rgba(255,255,255,0.9);
+
+    // z-index: -2;
+}
+
+.full-size.is-landing::after {
+    content: "";
+    position: absolute;
+    top: 60px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    background-position: center;
+    background-image: url("../images/crop_primary.png");
+    background-size: 100px 100px; 
+
 }
 
 .is-fullheight {
@@ -34,6 +66,7 @@ main {
     }
     // justify call content
     text-align: justify;
+
 }
 
 //Styling for pictures in blog
@@ -84,6 +117,11 @@ main {
     width: 100%;
     height: 50px;
     background-image: linear-gradient(180deg, transparent 0, white 100%);
+}
+
+.border {
+    border: 2px solid $light;
+    border-radius: 5px;
 }
 
 .hero {
@@ -172,7 +210,7 @@ main {
     width: 100%;
     height: 100%;
     z-index: -1;
-    background-color: $primary;
+    background-color: transparent;
     overflow: hidden;
 }
 
@@ -182,15 +220,24 @@ main {
     margin: 0 !important;
     padding: 0 !important;
     a {
-        color: black;
-    }
-    h1.title {
         color: $light;
-        font-size: 7rem;
+    }
+
+    h1.title {
+        color: $primary;
+        font-size: 6rem;
+        font-weight: bold;
+        text-align: left;
+        // text-shadow: 2px 2px $dark;
+    }
+    @media (max-width: $widescreen) {
+        h1.title {
+            font-size: 5rem;
+        }
     }
     @media (max-width: $tablet) {
         h1.title {
-            font-size: 3rem;
+            font-size: 3rem;   
         }
     }
 

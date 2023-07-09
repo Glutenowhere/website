@@ -6,7 +6,7 @@ const svg = <svg></svg>
 const PatternBackground = () => {
     const data = useStaticQuery(graphql`
     {
-        file(absolutePath: {regex: "/crop.png/"}) {
+        file(absolutePath: {regex: "/crop_primary.png/"}) {
             id
             publicURL
         }
@@ -26,10 +26,10 @@ const PatternBackground = () => {
             <image
               xlinkHref={data.file.publicURL}
               preserveAspectRatio="xMidYMid slice"
-              x="5"
-              y="5"
-              width="10"
-              height="10"
+              x="0"
+              y="0"
+              width="20"
+              height="20"
             />
           </pattern>
         </defs>
@@ -40,7 +40,7 @@ const PatternBackground = () => {
           width="100%"
           height="100%"
           fill="url(#no-gluten)"
-          opacity="0.2"
+          opacity="0.05"
         />
       </svg>
     );

@@ -3,13 +3,13 @@ import "../style/bulmacustom.scss"
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import { graphql, useStaticQuery } from "gatsby";
 import Layout from "../components/layout.js";
-import InfoCard from "../components/infoCard";
-import PatternBackgound from "../components/patternBackground";
 
 const instagram = {
   iconName: "fa-instagram",
   link: "https://www.instagram.com/glutenout23/",
 };
+
+
 
 const IndexPage = () => {
     const data = useStaticQuery(graphql`
@@ -24,48 +24,59 @@ const IndexPage = () => {
             cards
           }
         }
+        socialMedia: allMarkdownRemark(
+          filter: { fields: { category: { eq: "socialmedia" } } }
+        ) {
+          nodes {
+            id
+            frontmatter {
+              name
+              link
+              iconName
+            }
+          }
+        }
       }
     `);
 
   return (
     <>
       <Layout name="landing">
-        <PatternBackgound />
-        <section className="section is-flex is-flex-direction-column is-justify-content-space-between">
-          <div className="columns is-flex-grow-1">
-            <div className="column is-two-thirds">
+        <section className="section is-flex is-flex-direction-column is-justify-content-space-around">
+          <div className="columns is-flex is-multiline">
+            <div className="column is-half is-full-mobile is-flex is-align-content-center">
               <h1 className="title">{data.project.frontmatter.title}</h1>
             </div>
-            <div className="column is-one-third">
-              {data.project.frontmatter.cards.map((card) => (
-                <div className="columns">
-                  <div className="column is-full">
-                    <InfoCard
-                      key={card}
-                      body={<p className="title has-text-left">{card}</p>}
-                    />
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+            <div className="column is-half is-full-mobile">
+              <div className="box has-background-primary is-fullheight is-flex is-flex-direction-column is-justify-content-center p-6">
+                {data.project.frontmatter.cards.map((card) => (
+                  <p className="title has-text-left has-text-light">{card}</p>
+                ))}
 
-          <div className="columns">
-            <div className="column has-text-centered">
-              <p className="title">
-                <a
-                  key={instagram.iconName}
-                  href={instagram.link}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                >
-                  <span className="icon is-large">
-                    <i className={`fab ${instagram.iconName}`}></i>
-                  </span>
-                  Follow me on Instagram for gluten-free food, travel and work
-                  tips!
-                </a>
-              </p>
+                <div className="border pt-6">
+                  <p className="title has-text-centered has-text-light">
+                    Follow me ...
+                  </p>
+                  <p className="has-text-centered has-text-light">
+                    ... for gluten-free food, travel and work tips!
+                  </p>
+                  <p className="is-flex is-flex-direction-row is-justify-content-center">
+                    {data.socialMedia.nodes.map((item) => (
+                      <a
+                        className="navbar-item"
+                        key={item.id}
+                        href={item.frontmatter.link}
+                        target="_blank"
+                        rel="noreferrer noopener"
+                      >
+                        <span className="icon is-large">
+                          <i className={`fab ${item.frontmatter.iconName}`}></i>
+                        </span>
+                      </a>
+                    ))}
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
 
