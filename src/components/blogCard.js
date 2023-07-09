@@ -9,7 +9,7 @@ const BlogCard = (props) => {
       key={props.slug}
     >
       <div className="card-image">
-        <Link to={`${props.slug}/#header`}>
+        <Link to={`${props.slug}`}>
           <figure className="image">
             {props.image ? (
               <GatsbyImage alt="picture of event" image={props.image} />
