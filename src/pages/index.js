@@ -43,7 +43,7 @@ const IndexPage = () => {
             <div className="column is-half is-full-mobile">
               <div className="box has-background-primary is-fullheight is-flex is-flex-direction-column is-justify-content-center p-6">
                 {data.project.frontmatter.cards.map((card) => (
-                  <p className="title has-text-left has-text-light">{card}</p>
+                  <p className="title has-text-left has-text-light" key={card}>{card}</p>
                 ))}
 
                 <div className="border pt-6">

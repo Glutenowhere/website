@@ -9,21 +9,6 @@ const navItems = [
     {name: "Research Corner", link: "/research-corner"},
 ]
 
-const socialMediaItems = [
-  { 
-    iconName: "fa-twitter", 
-    link: "https://twitter.com/ane_ste" 
-  },
-  {
-    iconName: "fa-linkedin",
-    link: "https://www.linkedin.com/in/anne-steinhoff-04689661/",
-  },
-  {
-    iconName: "fa-instagram",
-    link: "https://www.instagram.com/glutenout23/",
-  }
-];
-
 const Layout = (props) => {
 
     const data = useStaticQuery(graphql`
