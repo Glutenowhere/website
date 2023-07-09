@@ -3,7 +3,6 @@ import "../style/bulmacustom.scss"
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import { graphql, useStaticQuery } from "gatsby";
 import Layout from "../components/layout.js";
-import PatternBackgound from "../components/patternBackground";
 
 const instagram = {
   iconName: "fa-instagram",
@@ -44,7 +43,6 @@ const IndexPage = () => {
     <>
       <Layout name="landing">
         <section className="section is-flex is-flex-direction-column is-justify-content-space-around">
-          <PatternBackgound/>
           <div className="columns is-flex is-multiline">
             <div className="column is-half is-full-mobile is-flex is-align-content-center">
               <h1 className="title">{data.project.frontmatter.title}</h1>

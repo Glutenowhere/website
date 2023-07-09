@@ -6,10 +6,24 @@ $link: $primary;
 @import "~bulma/bulma.sass";
 
 body {
+    position: relative;
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
     font-size: 20px;
 }
+
+// body::after {
+//     content: "";
+//     opacity: 0.5;
+//     top: 0;
+//     left: 0;
+//     bottom: 0;
+//     right: 0;
+//     position: absolute;
+//     // z-index: -1;
+//     background-color: $white;  
+
+// }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Lato', sans-serif;
@@ -18,9 +32,27 @@ h1, h2, h3, h4, h5, h6 {
 
 // always stretch content to full height
 .full-size {
+    position: relative;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    background-color: rgba(255,255,255,0.9);
+
+    // z-index: -2;
+}
+
+.full-size.is-landing::after {
+    content: "";
+    position: absolute;
+    top: 60px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    background-position: center;
+    background-image: url("../images/crop_primary.png");
+    background-size: 100px 100px; 
+
 }
 
 .is-fullheight {
@@ -34,6 +66,7 @@ main {
     }
     // justify call content
     text-align: justify;
+
 }
 
 //Styling for pictures in blog
