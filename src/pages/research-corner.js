@@ -47,17 +47,21 @@ const ResearchCorner = () => {
     <Layout name="Research Corner">
       <section className="section">
         <div className="columns">
+          <div className="column is-one-third">
+            <GatsbyImage
+              alt="Image illustrating the research corner"
+              image={
+                data.description.frontmatter.image.childImageSharp
+                  .gatsbyImageData
+              }
+            />
+          </div>
           <div className="column is-two-thirds">
             <h1 className="title">{data.description.frontmatter.title}</h1>
             <div
               className="content"
               dangerouslySetInnerHTML={{ __html: data.description.html }}
             ></div>
-          </div>
-          <div className="column is-one-third">
-            <span style={{ fontSize: "300px" }}>
-              <i class="fas fa-book "></i>
-            </span>
           </div>
         </div>
       </section>

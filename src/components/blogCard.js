@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
-import { GatsbyImage, StaticImage } from "gatsby-plugin-image";
+import { GatsbyImage} from "gatsby-plugin-image";
 
 const BlogCard = (props) => {
   return (
@@ -9,7 +9,7 @@ const BlogCard = (props) => {
       key={props.slug}
     >
       <div className="card-image">
-        <Link to={`${props.slug}/#header`}>
+        <Link to={`${props.slug}`}>
           <figure className="image">
             {props.image ? (
               <GatsbyImage alt="picture of event" image={props.image} />
