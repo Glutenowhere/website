@@ -54,7 +54,8 @@ const IndexPage = () => {
                     ... for gluten-free food, travel and work tips!
                   </p>
                   <p className="is-flex is-flex-direction-row is-justify-content-center">
-                    {data.socialMedia.nodes.map((item) => (
+                    {/* Just use Instagram, probably smarter to solve that in the graphql query actually */}
+                    {data.socialMedia.nodes.filter(item => item.frontmatter.name === "Instagram").map((item) => (
                       <a
                         className="navbar-item"
                         key={item.id}
@@ -76,7 +77,7 @@ const IndexPage = () => {
           <div className="columns is-centered">
             <div className="column is-two-thirds">
               <div
-                className="content"
+                className="content has-text-primary has-text-weight-bold"
                 dangerouslySetInnerHTML={{ __html: data.project.html }}
               ></div>
             </div>
