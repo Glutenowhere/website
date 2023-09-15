@@ -3,8 +3,8 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `Anne website`,
-    siteUrl: `https://www.yourdomain.tld`,
+    title: `Coelic Disease and the Workplace`,
+    siteUrl: `https://glutenowhere.com/`,
   },
   plugins: [
     "gatsby-plugin-image",
