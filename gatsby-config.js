@@ -14,6 +14,17 @@ module.exports = {
         icon: "src/images/logo.png",
       },
     },
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: [
+          "G-PJLDXDN8P9", // Google Analytics / GA
+        ],
+      },
+      pluginConfig: {
+        head: true,
+      },
+    },
     "gatsby-plugin-mdx",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
