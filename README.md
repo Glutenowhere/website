@@ -176,12 +176,44 @@ Title is self-explorotary. `Cards` refers to the content in the card on the righ
 
 
 ## Research Corner 
-In the [research-corner subfolder](src/content/research-corner/) you will find a number of markdown files with the name reflecting the title of the research corner entry (e.g. `coeliac-disease-and-the-never-ending-story-of-navigating-social-gatherings.md`). You have to create a new markdown file for each research corner entry.
+In the [research-corner subfolder](src/content/research-corner/) you will find a number of markdown files with the name reflecting the title of the research corner entry (e.g. `src/content/research-corner/cognitivedeficitandwhitematter.md`). You have to create a new markdown file for each research corner entry.
 
  The frontmatter template looks like this:
 
 ```
+title: "Cognitive Deficit and White Matter Changes in Persons With Celiac Disease: A Population-Based Study. Gastroenterology."
+author: "Croall, I.D., Sanders, D.S., Hadjivassiliou M., and Hoggard, N."
+year: "2020"
+in: "Gastroenterology. 158(8):2112-2122"
+link: "https://www.gastrojournal.org/article/S0016-5085(20)30239-0/fulltext"
 ```
+
+The title will be shown in bold heading each research corner entry. The author, year, and the publishing medium (defined in `in`) are displayed below the title. At the bottom of each entry, there are to buttons, the right one links to the `link` defined in the frontmatter and the left one shows the summary of the research article that is defined in the main body of the markdown file.
+
+The research corner folder also includes a file called `research.md`. In here you can add a short introduction to the research corner section. The frontmatter looks like this:
+
+```
+---
+title: ""
+image: "../../images/research.png"
+---
+```
+ The introduction goes into the main body of the markdown file below the frontmatter.
+
+## Social Media
+In the [socialmedia subfolder](src/content/socialmedia/) you will find a number of markdown files with the name reflecting the social media handle (e.g. `src/content/socialmedia/twitter.md`). You have to create a new markdown file for each social media handle.
+
+ The frontmatter template looks like this:
+
+```
+---
+name: Twitter
+iconName: "fa-twitter"
+link: "https://twitter.com/ane_ste"
+---
+```
+
+Name is the name of the social media handle, iconName is the name of the icon that is used to display the social media handle. You can find a list of all available icons [here](https://fontawesome.com/v5.15/icons?d=gallery&p=2&m=free). The link is the URL to the social media handle.
 
 # Technical Setup
 
@@ -189,4 +221,4 @@ A quick technical perspective one how the website was created and how it is host
 
 The website was created with the [Gatsby](https://www.gatsbyjs.com/) framework. Gatsby is a react-based static site generator. It further uses the CSS framework [Bulma](https://bulma.io/) for styling.
 
-The source code is hosted here on GitHub, but the website is built and hosted on [Gatsby Cloud](https://www.gatsbyjs.com/products/cloud/). Every time, changes are committed to GitHub a rebuilt is triggered on Gatsby Cloud. A GitHub [workflow](.github/workflows/update_log.yml) is defined to run this [python script](log/update_log.py) once a day at 21:12 UTC. The script updates this [log file](log/log.txt) and then commits the changes which triggers a rebuilt on Gatsby Cloud. This ensures that the website pulls the latest tweets from the cIDA Twitter for the News section in What's On and that items are moved from What's On to Archive the day they expire.
+The source code is hosted here on GitHub, but the website is built and hosted on [Gatsby Cloud](https://www.gatsbyjs.com/products/cloud/). Every time, changes are committed to GitHub a rebuilt is triggered on Gatsby Cloud. 
