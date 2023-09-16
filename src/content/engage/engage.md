@@ -1,6 +1,6 @@
 ---
 title: "Do you have Coeliac Disease?\nDo you have a minute or an hour to spare to share your experience?\nI would love to hear from you!"
-image: "./talk.jpg"
+image: "../../images/talk.jpg"
 ---
 
 

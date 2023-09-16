@@ -3,8 +3,8 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `Anne website`,
-    siteUrl: `https://www.yourdomain.tld`,
+    title: `Coelic Disease and the Workplace`,
+    siteUrl: `https://glutenowhere.com/`,
   },
   plugins: [
     "gatsby-plugin-image",
@@ -12,6 +12,17 @@ module.exports = {
       resolve: "gatsby-plugin-manifest",
       options: {
         icon: "src/images/logo.png",
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: [
+          "G-PJLDXDN8P9", // Google Analytics / GA
+        ],
+      },
+      pluginConfig: {
+        head: true,
       },
     },
     "gatsby-plugin-mdx",
